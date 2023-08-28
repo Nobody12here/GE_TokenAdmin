@@ -1,0 +1,10 @@
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  margin: 0; 
+  background: url('./assets/background2.jpg');
+  background-size: cover;
+}
+
