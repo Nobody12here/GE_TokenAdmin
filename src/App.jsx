@@ -52,10 +52,10 @@ function App() {
   }, [web3]);
 
   async function handleTokenAdd(event,tokenAmount){
-    const amount = (parseInt(tokenAmount) * 10**18).toString();
+    const amount = (parseInt(tokenAmount)).toString();
     const allowance = await tokenContract.methods.allowance(address,REWARD_CONTRACT_ADDRESS).call()
-    console.log(allowance)
-    if( allowance < tokenAmount){
+    
+    if( parseInt(allowance)/10**18 < tokenAmount){
       //first approve some tokens
       await tokenContract.methods.approve(REWARD_CONTRACT_ADDRESS,tokenAmount).send({from:address});
     }
